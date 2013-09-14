@@ -110,7 +110,6 @@
 {
     UIAlertView* alert = [[UIAlertView alloc] initWithTitle:@"Error" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
     [alert show];
-    NSLog(@"At least two operands are necessary before executing an operation in NPR");
 }
 
 - (void)viewDidLoad

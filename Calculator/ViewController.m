@@ -14,9 +14,10 @@
 
 @property (readwrite) Stack* numberStack;
 
-- (void)showError:(NSString*) message;
 - (double)computeWithOperand1:(double)op1 operand2:(double)op2 andOperation:(NSString*)op;
 - (void)updateUI;
+- (NSArray*) limitLength:(NSArray*)array;
+- (void)showError:(NSString*) message;
 
 @end
 
@@ -46,6 +47,7 @@
     
     if ([self.numberStack size] < 2) {
         [self showError:@"At least two operands are necessary before executing an operation in NPR"];
+        return;
     }
     
     operand2 = [[self.numberStack pop] doubleValue];
@@ -90,7 +92,6 @@
 {
     NSArray* array = [self.numberStack arrayFromStack];
     array = [self limitLength:array];
-    //array = [self reverse:array];
     NSString* text = [array componentsJoinedByString:@"\n"];
     
     self.resultView.text = text;
@@ -103,11 +104,6 @@
         array = [array subarrayWithRange:range];
     }
     return array;
-}
-
-- (NSArray*) reverse:(NSArray*)array
-{
-    return [[array reverseObjectEnumerator] allObjects];
 }
 
 - (void)showError:(NSString*) message

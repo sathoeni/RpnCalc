@@ -10,4 +10,6 @@
 
 @interface ViewController : UIViewController
 
+@property (strong) IBOutlet UITextView* resultView;
+
 @end

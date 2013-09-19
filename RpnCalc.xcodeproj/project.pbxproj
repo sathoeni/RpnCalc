@@ -96,6 +96,15 @@
 			name = model;
 			sourceTree = "<group>";
 		};
+		439B201B17EB067D00ECD8F5 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				43D0EA9E17E3A0EE007672DA /* CalcViewController.h */,
+				43D0EA9F17E3A0EE007672DA /* CalcViewController.m */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
 		43D0EA7D17E3A0EE007672DA = {
 			isa = PBXGroup;
 			children = (
@@ -130,10 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				439B201A17EAFCE700ECD8F5 /* model */,
+				439B201B17EB067D00ECD8F5 /* controller */,
 				43D0EA9817E3A0EE007672DA /* AppDelegate.h */,
 				43D0EA9917E3A0EE007672DA /* AppDelegate.m */,
-				43D0EA9E17E3A0EE007672DA /* CalcViewController.h */,
-				43D0EA9F17E3A0EE007672DA /* CalcViewController.m */,
 				43D0EA9B17E3A0EE007672DA /* Main.storyboard */,
 				43D0EAA117E3A0EE007672DA /* Images.xcassets */,
 				43D0EA9017E3A0EE007672DA /* Supporting Files */,

@@ -37,6 +37,11 @@
                BlueprintName = "RpnCalcTests"
                ReferencedContainer = "container:RpnCalc.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "CalculatorTests">
+               </Test>
+            </SkippedTests>
          </TestableReference>
       </Testables>
       <MacroExpansion>

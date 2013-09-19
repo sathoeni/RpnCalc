@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4399608317EB225A00E52CA2 /* StackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4399608217EB225A00E52CA2 /* StackTests.m */; };
+		4399608517EB277800E52CA2 /* ComputerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4399608417EB277800E52CA2 /* ComputerTests.m */; };
 		439B201917EAFCD900ECD8F5 /* Computer.m in Sources */ = {isa = PBXBuildFile; fileRef = 439B201817EAFCD900ECD8F5 /* Computer.m */; };
 		43D0EA8A17E3A0EE007672DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EA8917E3A0EE007672DA /* Foundation.framework */; };
 		43D0EA8C17E3A0EE007672DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EA8B17E3A0EE007672DA /* CoreGraphics.framework */; };
@@ -21,7 +23,6 @@
 		43D0EAAA17E3A0EF007672DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EA8917E3A0EE007672DA /* Foundation.framework */; };
 		43D0EAAB17E3A0EF007672DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EA8D17E3A0EE007672DA /* UIKit.framework */; };
 		43D0EAB317E3A0EF007672DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 43D0EAB117E3A0EF007672DA /* InfoPlist.strings */; };
-		43D0EAB517E3A0EF007672DA /* CalculatorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EAB417E3A0EF007672DA /* CalculatorTests.m */; };
 		43D0EAC317E3B4DD007672DA /* Stack.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EAC217E3B4DD007672DA /* Stack.m */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4399608217EB225A00E52CA2 /* StackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StackTests.m; sourceTree = "<group>"; };
+		4399608417EB277800E52CA2 /* ComputerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ComputerTests.m; sourceTree = "<group>"; };
 		439B201717EAFCD900ECD8F5 /* Computer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Computer.h; sourceTree = "<group>"; };
 		439B201817EAFCD900ECD8F5 /* Computer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Computer.m; sourceTree = "<group>"; };
 		43D0EA8617E3A0EE007672DA /* RpnCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RpnCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +59,6 @@
 		43D0EAA817E3A0EF007672DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		43D0EAB017E3A0EF007672DA /* RpnCalcTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "RpnCalcTests-Info.plist"; sourceTree = "<group>"; };
 		43D0EAB217E3A0EF007672DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		43D0EAB417E3A0EF007672DA /* CalculatorTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalculatorTests.m; sourceTree = "<group>"; };
 		43D0EAC117E3B4DD007672DA /* Stack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stack.h; sourceTree = "<group>"; };
 		43D0EAC217E3B4DD007672DA /* Stack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Stack.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,7 +165,8 @@
 		43D0EAAE17E3A0EF007672DA /* RpnCalcTests */ = {
 			isa = PBXGroup;
 			children = (
-				43D0EAB417E3A0EF007672DA /* CalculatorTests.m */,
+				4399608417EB277800E52CA2 /* ComputerTests.m */,
+				4399608217EB225A00E52CA2 /* StackTests.m */,
 				43D0EAAF17E3A0EF007672DA /* Supporting Files */,
 			);
 			path = RpnCalcTests;
@@ -287,7 +290,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				43D0EAB517E3A0EF007672DA /* CalculatorTests.m in Sources */,
+				4399608517EB277800E52CA2 /* ComputerTests.m in Sources */,
+				4399608317EB225A00E52CA2 /* StackTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,19 +437,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RpnCalc.app/RpnCalc";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Calculator/Calculator-Prefix.pch";
+				GCC_PREFIX_HEADER = "RpnCalc/RpnCalc-Prefix.pch";
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "CalculatorTests/RpnCalcTests-Info.plist";
+				INFOPLIST_FILE = "RpnCalcTests/RpnCalcTests-Info.plist";
 				PRODUCT_NAME = RpnCalcTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
@@ -456,15 +460,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Calculator.app/Calculator";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/RpnCalc.app/RpnCalc";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
 					"$(DEVELOPER_FRAMEWORKS_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Calculator/Calculator-Prefix.pch";
-				INFOPLIST_FILE = "CalculatorTests/RpnCalcTests-Info.plist";
+				GCC_PREFIX_HEADER = "RpnCalc/RpnCalc-Prefix.pch";
+				INFOPLIST_FILE = "RpnCalcTests/RpnCalcTests-Info.plist";
 				PRODUCT_NAME = RpnCalcTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;

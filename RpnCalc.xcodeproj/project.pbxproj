@@ -17,7 +17,6 @@
 		43D0EA9617E3A0EE007672DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EA9517E3A0EE007672DA /* main.m */; };
 		43D0EA9A17E3A0EE007672DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EA9917E3A0EE007672DA /* AppDelegate.m */; };
 		43D0EA9D17E3A0EE007672DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D0EA9B17E3A0EE007672DA /* Main.storyboard */; };
-		43D0EAA017E3A0EE007672DA /* CalcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EA9F17E3A0EE007672DA /* CalcViewController.m */; };
 		43D0EAA217E3A0EE007672DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D0EAA117E3A0EE007672DA /* Images.xcassets */; };
 		43D0EAA917E3A0EF007672DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EAA817E3A0EF007672DA /* XCTest.framework */; };
 		43D0EAAA17E3A0EF007672DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EA8917E3A0EE007672DA /* Foundation.framework */; };
@@ -52,8 +51,6 @@
 		43D0EA9817E3A0EE007672DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43D0EA9917E3A0EE007672DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		43D0EA9C17E3A0EE007672DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		43D0EA9E17E3A0EE007672DA /* CalcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalcViewController.h; sourceTree = "<group>"; };
-		43D0EA9F17E3A0EE007672DA /* CalcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcViewController.m; sourceTree = "<group>"; };
 		43D0EAA117E3A0EE007672DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43D0EAA717E3A0EF007672DA /* RpnCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RpnCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D0EAA817E3A0EF007672DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -101,8 +98,6 @@
 		439B201B17EB067D00ECD8F5 /* controller */ = {
 			isa = PBXGroup;
 			children = (
-				43D0EA9E17E3A0EE007672DA /* CalcViewController.h */,
-				43D0EA9F17E3A0EE007672DA /* CalcViewController.m */,
 			);
 			name = controller;
 			sourceTree = "<group>";
@@ -279,7 +274,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D0EAC317E3B4DD007672DA /* Stack.m in Sources */,
-				43D0EAA017E3A0EE007672DA /* CalcViewController.m in Sources */,
 				43D0EA9A17E3A0EE007672DA /* AppDelegate.m in Sources */,
 				439B201917EAFCD900ECD8F5 /* Computer.m in Sources */,
 				43D0EA9617E3A0EE007672DA /* main.m in Sources */,

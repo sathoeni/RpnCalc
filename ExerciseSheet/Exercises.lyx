@@ -76,6 +76,22 @@ Objective-C & iOS Workshop
 Stack
 \end_layout
 
+\begin_layout Subsection
+Create a New Project
+\end_layout
+
+\begin_layout Paragraph*
+Goal: TBD
+\end_layout
+
+\begin_layout Paragraph
+TBD
+\end_layout
+
+\begin_layout Subsection
+Implement a Stack
+\end_layout
+
 \begin_layout Paragraph*
 Goal: TBD
 \end_layout
@@ -88,12 +104,16 @@ TBD
 UI
 \end_layout
 
-\begin_layout Subsection*
-Link Interface Items
+\begin_layout Subsection
+Linking Interface Items
 \end_layout
 
 \begin_layout Standard
-Goal: in this exercise, we will see how to link items defined in the Interface
+
+\series bold
+Goal
+\series default
+: in this exercise, we will see how to link items defined in the Interface
  Builder – classes, outlets and event methods – with the corresponding elements
  in the code.
 \end_layout
@@ -105,7 +125,7 @@ Open the skeleton project RpnCalcPart2.
 
 \begin_deeper
 \begin_layout Itemize
-The model: a Stack class and a skeleton of a Computer class.
+The model: a Stack and Computer model classes.
 \end_layout
 
 \begin_layout Itemize
@@ -114,8 +134,7 @@ A storyboard file where the UI of the app is defined.
 \end_layout
 
 \begin_layout Itemize
-A UnitTest class which verifies that the Stack and Computer methods are
- working properly.
+Various less important files.
 \end_layout
 
 \end_deeper
@@ -125,22 +144,11 @@ Create a class CalcViewController, which should subclass UIViewController
 
 \begin_deeper
 \begin_layout Itemize
-In the Project Navigator, right mouse button (e.g.
- on the controller folder) then select 'New File...'
+As seen in the exercise 1.
 \end_layout
 
 \begin_layout Itemize
-On the next screen, choose the template 'Objective-C class' and then 'Next'
-\end_layout
-
-\begin_layout Itemize
-Type the name of the class 'CalcViewController' and the name of the base
- class 'UIViewController', then 'Next'.
-\end_layout
-
-\begin_layout Itemize
-Select the folder where to save the new class (just 'RpnCalc') and then
- 'Create'
+The new class 'CalcViewController' should be a subclass of 'UIViewController'.
 \end_layout
 
 \begin_layout Itemize
@@ -162,7 +170,7 @@ In the Project Navigator, click on the file 'Main.storyboard'.
 
 \begin_layout Itemize
 On the left side of the Interface Builder, in the view hierarchy tree, click
- on the the file 'View Controller' (see screenshot of figure 
+ on the the file 'View Controller' (see screenshot 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Screenshot-of-IB"
@@ -173,8 +181,7 @@ reference "fig:Screenshot-of-IB"
 \end_layout
 
 \begin_layout Itemize
-On the right side select the Identity Inspector (see screenshot of figure
- 
+On the right side select the Identity Inspector (see screenshot 
 \begin_inset CommandInset ref
 LatexCommand ref
 reference "fig:Screenshot-of-IB"
@@ -202,7 +209,7 @@ status open
 \begin_layout Plain Layout
 \align center
 \begin_inset Graphics
-	filename images/IB-Identity-Inspector.png
+	filename images/IB-Identity-Inspector-crop.png
 	lyxscale 50
 	scale 50
 
@@ -243,7 +250,7 @@ Define an outlet for the result text view
 
 \begin_deeper
 \begin_layout Itemize
-In the CalcViewController (i.e.
+In the 'CalcViewController' (i.e.
  in the header .h), add the following property between '@interface' and '@end':
  
 \begin_inset listings
@@ -263,11 +270,11 @@ status open
 
 \begin_layout Itemize
 The prefix 'IBOutlet' does nothing in the code, except to indicate to IB
- that this property will be used as an outlet to an item in IB.
+ that this property will be used as an UI item outlet.
 \end_layout
 
 \begin_layout Itemize
-Go to IB (select 'Main.storyboard')
+Go to IB (select 'Main.storyboard').
 \end_layout
 
 \begin_layout Itemize
@@ -347,19 +354,17 @@ name "fig:connecting-an-outlet"
 
 \end_deeper
 \begin_layout Enumerate
-In CalcViewController, define methods to get the events when we press on
- a button.
+In 'CalcViewController', define UI callback methods.
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
 In order to get events in the code when we press on the calculator keys,
- we do the connection with the IB.
+ we do the connection with the desired events in IB.
 \end_layout
 
 \begin_layout Itemize
-First define in the controller three methods to get the events from the
- digit, operation and enter keys.
+First define in the controller three callback methods:
 \begin_inset listings
 lstparams "basicstyle={\small\ttfamily}"
 inline false
@@ -452,7 +457,7 @@ status open
 
 \begin_layout Itemize
 Similarly to the outlet definition, the 'IBAction' keyword does nothing
- in the code – it is a synonym to 'void' – excepted to indicate to IB that
+ in the code – it is a synonym to 'void' – except to indicate to IB that
  the corresponding methods are going to receive IB events.
  The 'sender' parameter is always the view where the event comes from –
  in this case an UIButton.
@@ -480,12 +485,234 @@ Finally connect the enter key to the method 'enterPressed:'.
 \begin_layout Enumerate
 Now you can start the simulator (the play button on the top left of Xcode).
  You should see the calculator popping up.
- When you press on a key, you should see in the console the corresponding
- output.
+ When you press on a key, you should see in the console the message of the
+ corresponding callback method.
+\end_layout
+
+\begin_layout Subsection
+Linking the Business Logic
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Goal
+\series default
+: in this exercise, we will see how to call the business logic and refresh
+ the UI from the callback methods in the controller.
 \end_layout
 
 \begin_layout Enumerate
-Foobar
+In the controller (the .m file) define and initialize a private property
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+According to the following snippet – should be before the '@implementation'
+ block.
+ 
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+@interface CalcViewController ()
+\end_layout
+
+\begin_layout Plain Layout
+
+@property (readwrite) Computer* computer;
+\end_layout
+
+\begin_layout Plain Layout
+
+@end
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Remember to import 
+\begin_inset Quotes eld
+\end_inset
+
+Computer.h
+\begin_inset Quotes erd
+\end_inset
+
+ at the top of the file, for the type 'Computer' to be visible.
+\end_layout
+
+\begin_layout Itemize
+In the method 'viewDidLoad', initialize the property.
+ A property should always be accessed using the dot notation, e.g.
+ 'self.foo'.
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+self.computer = [[Computer alloc] init];
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+In the controller (the .m file), define a method to update the UI
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Use the following snippet
+\begin_inset listings
+lstparams "basicstyle={\small\ttfamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+- (void)updateUI
+\end_layout
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\begin_layout Plain Layout
+
+    // code here
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Complete the missing part.
+ The method should:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Read the resulting text from the computer object.
+\end_layout
+
+\begin_layout Itemize
+Set the text content of the resultView – have a look at the text property
+ of UITextView.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Call 'updateUI' from the end of 'viewDidLoad'.
+\end_layout
+
+\begin_layout Enumerate
+Now complete the three callback methods 'digitPressed:', 'operationPressed:'
+ and 'enterPressed:'.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each method should do the following:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Call the corresponding method on the 'computer' property.
+\end_layout
+
+\begin_layout Itemize
+Call the method to update the UI.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+That's it.
+ Everything should be in place now.
+ Build and run the project.
+ The calculator should work correctly.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Hint: this is a calculator which works in RPN mode – reverse polnish notation.
+ To compute '1 + 2' you need the following steps:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Press '1'
+\end_layout
+
+\begin_layout Itemize
+Press 'Enter'
+\end_layout
+
+\begin_layout Itemize
+Press '2'
+\end_layout
+
+\begin_layout Itemize
+Press '+'
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Section
+API from an External Framework & Gesture Recognizer
+\end_layout
+
+\begin_layout Subsection
+Say it!
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Goal
+\series default
+: TBD
+\end_layout
+
+\begin_layout Standard
+TBD
+\end_layout
+
+\begin_layout Subsection
+Shake it!
+\end_layout
+
+\begin_layout Standard
+
+\series bold
+Goal
+\series default
+: TBD
+\end_layout
+
+\begin_layout Standard
+TBD
 \end_layout
 
 \end_body

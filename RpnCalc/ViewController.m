@@ -14,10 +14,10 @@
 
 @property (readwrite) Stack* numberStack;
 
-- (double)computeWithOperand1:(double)op1 operand2:(double)op2 andOperation:(NSString*)op;
-- (void)updateUI;
-- (NSArray*) limitLength:(NSArray*)array;
-- (void)showError:(NSString*) message;
+//- (double)computeWithOperand1:(double)op1 operand2:(double)op2 andOperation:(NSString*)op;
+//- (void)updateUI;
+//- (NSArray*) limitLength:(NSArray*)array;
+//- (void)showError:(NSString*) message;
 
 @end
 
@@ -30,6 +30,7 @@
     NSString* digit = button.currentTitle;
     NSLog(@"Digit pressed %@", digit);
     
+    // -> into the model
     NSNumber* current = (NSNumber*)[self.numberStack pop];
     NSNumber* new = [NSNumber numberWithDouble:[current doubleValue] * 10 + [digit doubleValue]];
     [self.numberStack push:new];
@@ -45,6 +46,7 @@
     
     double operand1, operand2;
     
+    // -> into the model
     if ([self.numberStack size] < 2) {
         [self showError:@"At least two operands are necessary before executing an operation in NPR"];
         return;
@@ -63,10 +65,12 @@
 {
     NSLog(@"Enter pressed");
         
+    // -> into the model
     [self.numberStack push:@0.0];
     [self updateUI];
 }
 
+// -> into the model
 - (double)computeWithOperand1:(double)op1 operand2:(double)op2 andOperation:(NSString*)op
 {
     // TODO get rid of this string compare

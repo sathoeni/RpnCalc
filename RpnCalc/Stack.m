@@ -45,7 +45,7 @@
     }
     else {
 
-        NSDecimalNumber* item = [self.array objectAtIndex:[self.array count] - 1];
+        id item = [self.array objectAtIndex:[self.array count] - 1];
         [self.array removeLastObject];
         return item;
 

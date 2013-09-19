@@ -30,22 +30,20 @@
 
 - (void)digitPressed:(NSString *)digitString
 {
-    NSNumber* current = (NSNumber*)[self.stack pop];
+    NSNumber* current = [self.stack pop];
     NSNumber* new = [NSNumber numberWithDouble:[current doubleValue] * 10 + [digitString doubleValue]];
     [self.stack push:new];
 }
 
 - (void) operationPressed:(NSString*)operationString
 {
-    double operand1, operand2;
-    
     if ([self.stack size] < 2) {
         NSLog(@"At least two operands are necessary before executing an operation in NPR");
         return;
     }
     
-    operand2 = [[self.stack pop] doubleValue];
-    operand1 = [[self.stack pop] doubleValue];
+    double operand2 = [[self.stack pop] doubleValue];
+    double operand1 = [[self.stack pop] doubleValue];
     
     double result = [self computeWithOperand1:operand1 operand2:operand2 andOperation:operationString];
     [self.stack push:[NSNumber numberWithDouble:result]];
@@ -53,7 +51,6 @@
 
 - (double)computeWithOperand1:(double)op1 operand2:(double)op2 andOperation:(NSString*)op
 {
-    // TODO get rid of this string compare
     if ([op isEqualToString:@"+"]) {
         return op1 + op2;
     }

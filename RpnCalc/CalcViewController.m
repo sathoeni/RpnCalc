@@ -21,7 +21,7 @@
 
 - (IBAction)digitPressed:(id)sender
 {
-    UIButton* button = (UIButton*)sender;
+    UIButton* button = sender;
     NSString* digit = button.currentTitle;
     NSLog(@"Digit pressed %@", digit);
     
@@ -31,7 +31,7 @@
 
 - (IBAction)operationPressed:(id)sender
 {
-    UIButton* button = (UIButton*)sender;
+    UIButton* button = sender;
     NSString* operation = button.currentTitle;
     NSLog(@"Operation pressed %@", operation);
     

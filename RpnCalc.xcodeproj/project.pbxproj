@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		439B201917EAFCD900ECD8F5 /* Computer.m in Sources */ = {isa = PBXBuildFile; fileRef = 439B201817EAFCD900ECD8F5 /* Computer.m */; };
 		43D0EA8A17E3A0EE007672DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EA8917E3A0EE007672DA /* Foundation.framework */; };
 		43D0EA8C17E3A0EE007672DA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EA8B17E3A0EE007672DA /* CoreGraphics.framework */; };
 		43D0EA8E17E3A0EE007672DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EA8D17E3A0EE007672DA /* UIKit.framework */; };
@@ -14,7 +15,7 @@
 		43D0EA9617E3A0EE007672DA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EA9517E3A0EE007672DA /* main.m */; };
 		43D0EA9A17E3A0EE007672DA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EA9917E3A0EE007672DA /* AppDelegate.m */; };
 		43D0EA9D17E3A0EE007672DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43D0EA9B17E3A0EE007672DA /* Main.storyboard */; };
-		43D0EAA017E3A0EE007672DA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EA9F17E3A0EE007672DA /* ViewController.m */; };
+		43D0EAA017E3A0EE007672DA /* CalcViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 43D0EA9F17E3A0EE007672DA /* CalcViewController.m */; };
 		43D0EAA217E3A0EE007672DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43D0EAA117E3A0EE007672DA /* Images.xcassets */; };
 		43D0EAA917E3A0EF007672DA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EAA817E3A0EF007672DA /* XCTest.framework */; };
 		43D0EAAA17E3A0EF007672DA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 43D0EA8917E3A0EE007672DA /* Foundation.framework */; };
@@ -35,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		439B201717EAFCD900ECD8F5 /* Computer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Computer.h; sourceTree = "<group>"; };
+		439B201817EAFCD900ECD8F5 /* Computer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Computer.m; sourceTree = "<group>"; };
 		43D0EA8617E3A0EE007672DA /* RpnCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RpnCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D0EA8917E3A0EE007672DA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		43D0EA8B17E3A0EE007672DA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -46,8 +49,8 @@
 		43D0EA9817E3A0EE007672DA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		43D0EA9917E3A0EE007672DA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		43D0EA9C17E3A0EE007672DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		43D0EA9E17E3A0EE007672DA /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		43D0EA9F17E3A0EE007672DA /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		43D0EA9E17E3A0EE007672DA /* CalcViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CalcViewController.h; sourceTree = "<group>"; };
+		43D0EA9F17E3A0EE007672DA /* CalcViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CalcViewController.m; sourceTree = "<group>"; };
 		43D0EAA117E3A0EE007672DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		43D0EAA717E3A0EF007672DA /* RpnCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RpnCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		43D0EAA817E3A0EF007672DA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -82,6 +85,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		439B201A17EAFCE700ECD8F5 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				43D0EAC117E3B4DD007672DA /* Stack.h */,
+				43D0EAC217E3B4DD007672DA /* Stack.m */,
+				439B201717EAFCD900ECD8F5 /* Computer.h */,
+				439B201817EAFCD900ECD8F5 /* Computer.m */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		43D0EA7D17E3A0EE007672DA = {
 			isa = PBXGroup;
 			children = (
@@ -115,12 +129,11 @@
 		43D0EA8F17E3A0EE007672DA /* RpnCalc */ = {
 			isa = PBXGroup;
 			children = (
-				43D0EAC117E3B4DD007672DA /* Stack.h */,
-				43D0EAC217E3B4DD007672DA /* Stack.m */,
+				439B201A17EAFCE700ECD8F5 /* model */,
 				43D0EA9817E3A0EE007672DA /* AppDelegate.h */,
 				43D0EA9917E3A0EE007672DA /* AppDelegate.m */,
-				43D0EA9E17E3A0EE007672DA /* ViewController.h */,
-				43D0EA9F17E3A0EE007672DA /* ViewController.m */,
+				43D0EA9E17E3A0EE007672DA /* CalcViewController.h */,
+				43D0EA9F17E3A0EE007672DA /* CalcViewController.m */,
 				43D0EA9B17E3A0EE007672DA /* Main.storyboard */,
 				43D0EAA117E3A0EE007672DA /* Images.xcassets */,
 				43D0EA9017E3A0EE007672DA /* Supporting Files */,
@@ -255,8 +268,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				43D0EAC317E3B4DD007672DA /* Stack.m in Sources */,
-				43D0EAA017E3A0EE007672DA /* ViewController.m in Sources */,
+				43D0EAA017E3A0EE007672DA /* CalcViewController.m in Sources */,
 				43D0EA9A17E3A0EE007672DA /* AppDelegate.m in Sources */,
+				439B201917EAFCD900ECD8F5 /* Computer.m in Sources */,
 				43D0EA9617E3A0EE007672DA /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

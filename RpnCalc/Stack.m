@@ -10,7 +10,9 @@
 
 
 @interface Stack ()
+
 @property (strong) NSMutableArray* array;
+
 @end
 
 
@@ -38,10 +40,9 @@
 - (id) pop
 {
     if ([self isEmpty]) {
-
-        NSException* exception = [NSException exceptionWithName:@"IllegalStateException" reason:@"cannot pop on an empty stack" userInfo:nil];
-        @throw exception;
-
+        
+        return nil;
+        
     }
     else {
 

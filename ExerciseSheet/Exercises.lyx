@@ -692,11 +692,175 @@ Say it!
 \series bold
 Goal
 \series default
-: TBD
+: In this Exercise we will teach our calculator to speak the result.
+ For this we will update the UI and use an external framework for the speech
+ synthesis.
 \end_layout
 
+\begin_layout Enumerate
+Open the storyboard (Main.storyboard) and click the empty button in the lower
+ row.
+\end_layout
+
+\begin_layout Enumerate
+In Attribute Inspector locate the entry “Image” and set its value to loudspeaker
+ by using the dropdown.
+ 
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-TBD
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/CustomizePlayButton.png
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Customizing the play button
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Switch to Assistant editor perspective an make sure you see the storyboard
+ on the left and your CalcViewController.m file on the right.
+ Drag a line from the loudspeaker button to an empty space in the m-file
+ by dragging ctrl.
+ 
+\end_layout
+
+\begin_layout Enumerate
+In the popup define the method name “loudSpeakerPressed”.
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename images/IBAction.png
+	scale 50
+
+\end_inset
+
+
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Defining an IBAction with Interface Builder
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Import the AVFoundation framework by selecting your project root in the
+ Project Navigator.
+ Scroll to the section 'Linked Framework and Libraries' and hit the '+ button'.
+ From the list select 'AVFoundation.framework'.
+ Navigate to your CalcViewController.m file and add import 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#import <AVFoundation/AVFoundation.h>
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Add these lines of code to the loudSpekerPressed method: 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+AVSpeechUtterance *utterance = [AVSpeechUtterance speechUtteranceWithString:@”He
+llo World”]; 
+\end_layout
+
+\begin_layout Plain Layout
+
+AVSpeechSynthesizer *synthesizer = [AVSpeechsynthesizer alloc] init]; 
+\end_layout
+
+\begin_layout Plain Layout
+
+[synthesizer speakUtterance:utterance]; 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Modify the code so that the calculator result is played.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Optional: Optimize your code so that utterance and synthesizer is only instantia
+ted once.
+ 
+\end_layout
+
+\begin_layout Enumerate
+Optional: Play around with the options of AVSpeechUtterance.
+ How about using a different language or rate? Tip: Have a look in the documenta
+tion (Alt+Click on class name).
 \end_layout
 
 \begin_layout Subsection
@@ -708,11 +872,86 @@ Shake it!
 \series bold
 Goal
 \series default
-: TBD
+: In this exercise we will reset our calculator by shaking the device.
 \end_layout
 
+\begin_layout Enumerate
+Open class CalcViewController.m and add these lines of code:
+\end_layout
+
+\begin_deeper
 \begin_layout Standard
-TBD
+\begin_inset listings
+lstparams "basicstyle={\small\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+-(void) motionBegann:(UIEventSubtype*) motion withEvent:(UIEvent*)event{
+\end_layout
+
+\begin_layout Plain Layout
+
+	if(event.type == UIEventSubtypeMotionShake){
+\end_layout
+
+\begin_layout Plain Layout
+
+		NSLog(@”Shake it!”);
+\end_layout
+
+\begin_layout Plain Layout
+
+	}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Test your code in the simulator.
+ Simulator can emulate a shake event from the 'Hardware' menu.
+\end_layout
+
+\begin_layout Enumerate
+Modify your method to reset the model and display the result in the calculator
+ display.
+ Tip: You need to modify the classes ViewController.m, Computer.h, Computer.m,
+ Stack.h and Stack.m.
+ Use the method 
+\end_layout
+
+\begin_deeper
+\begin_layout Standard
+\begin_inset listings
+lstparams "basicstyle={\small\sffamily}"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+–(void) removeAllObjects;
+\end_layout
+
+\end_inset
+
+ on NSMutableArray to reset the stack.
+ 
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Optional: Play around with your calculator.
+ Be creative – how about a calculator that speaks every number that is pressed?
 \end_layout
 
 \end_body
